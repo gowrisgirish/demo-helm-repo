@@ -1,1 +1,2 @@
-# demo-helm-repo
+# helm-chart
+helm-chart
