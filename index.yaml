@@ -10,5 +10,5 @@ entries:
     type: application
     urls:
     - https://gowrisgirish.github.io/demo-helm-repo/helm-chart-test-0.1.0.tgz
-    version: 0.1.0-SNAPSHOT
+    version: 2024.11.0-SNAPSHOT
 generated: "2024-04-05T14:43:54.255399-04:00"
