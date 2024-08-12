@@ -27,3 +27,6 @@ persistence:
   storageClass: your-storage-class
   accessMode: ReadWriteOnce
   size: 10Gi
+  labels:
+    app.kubernetes.io/name: sonarqube
+    app.kubernetes.io/version: "1.1.1"
