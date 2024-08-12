@@ -1,0 +1,29 @@
+# my-sonarqube-values.yaml
+
+## Set the replica count
+replicaCount: 2
+
+## Configure the SonarQube service type
+service:
+  type: LoadBalancer
+
+## Customize the resources (CPU, memory) for SonarQube pods
+resources:
+  limits:
+    cpu: "2"
+    memory: "4Gi"
+  requests:
+    cpu: "1"
+    memory: "2Gi"
+
+## Configure the database connection (if using an external database)
+jdbcUrl: jdbc:postgresql://your-postgres-host:5432/sonarqube
+jdbcUsername: your-db-username
+jdbcPassword: your-db-password
+
+## Customize the persistence settings
+persistence:
+  enabled: true
+  storageClass: your-storage-class
+  accessMode: ReadWriteOnce
+  size: 10Gi
