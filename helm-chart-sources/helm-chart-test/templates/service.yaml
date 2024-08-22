@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "helm-chart-test.fullname" . }}
-  #name: testing
+  #name: {{ include "helm-chart-test.fullname" . }}
+  name: {{ .Values.controller.service.name }}
   labels:
     {{- include "helm-chart-test.labels" . | nindent 4 }}
 spec:
