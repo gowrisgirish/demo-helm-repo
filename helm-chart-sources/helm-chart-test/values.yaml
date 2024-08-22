@@ -3,7 +3,6 @@
 # Declare variables to be passed into your templates.
 
 replicaCount: 1
-controller.service.name: test-service
 image:
   repository: nginx
   pullPolicy: IfNotPresent
@@ -42,6 +41,7 @@ securityContext: {}
 service:
   type: ClusterIP
   port: 80
+  name: test-service
 
 ingress:
   enabled: false
