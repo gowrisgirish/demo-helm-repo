@@ -2,9 +2,30 @@ apiVersion: v1
 kind: Service
 metadata:
   #name: {{ include "helm-chart-test.fullname" . }}
-  name: {{ .Values.service.name }}
+  name: {{ .Values.service.name }}-a
   labels:
     {{- include "helm-chart-test.labels" . | nindent 4 }}
+  annotations:
+    harness.io/primary-service: "true"
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "helm-chart-test.selectorLabels" . | nindent 4 }}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  #name: {{ include "helm-chart-test.fullname" . }}
+  name: {{ .Values.service.name }}-b
+  labels:
+    {{- include "helm-chart-test.labels" . | nindent 4 }}
+  annotations:
+    harness.io/stage-service: "true"
 spec:
   type: {{ .Values.service.type }}
   ports:
